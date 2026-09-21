@@ -15,3 +15,7 @@ The public repository commit identifies distribution documentation. The source a
 ## License and provenance
 
 Disco source is Apache-2.0. Benchmark tasks, copied vendor/reference documents, and third-party evidence retain upstream authorship and terms. The Apache license in this repository does not relicense those materials.
+
+## Reference documentation
+
+The [self-host reference](docs/self-host.md), [capability overview](docs/overview.md), and [source README](SOURCE-README.md) are copied from the reviewed source snapshot. Historical source documentation may describe planned multi-architecture registry publishing; consult the release notes for the actual published architectures and availability. Some governance checks require the development Git history, which is not part of the source archive.
