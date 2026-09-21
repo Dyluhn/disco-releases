@@ -1,3 +1,5 @@
+> **Distribution note:** this public copy adapts installation links to the reviewed source archive. Prebuilt v0.2.0 images are pending. To build locally, use `podman compose -f compose.yaml -f compose.build.yaml up -d --build` (or Docker with the documented rootless settings). The development repository remains private.
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
@@ -24,8 +26,11 @@ Python, Node or `uv` on the host; the stack pulls the published images (about
 ```bash
 sudo apt-get update && sudo apt-get install -y git podman docker-compose   # Debian 13
 # Ubuntu 24.04: ... git podman podman-compose
-git clone https://github.com/Dyluhn/disco.git
-cd disco
+curl -fLO https://github.com/Dyluhn/disco-releases/releases/download/v0.2.0/disco-source-v0.2.0.tar.gz
+curl -fLO https://github.com/Dyluhn/disco-releases/releases/download/v0.2.0/SHA256SUMS
+sha256sum --ignore-missing -c SHA256SUMS
+tar -xzf disco-source-v0.2.0.tar.gz
+cd disco-v0.2.0
 systemctl --user daemon-reload
 systemctl --user start dbus.socket
 loginctl enable-linger "$USER"

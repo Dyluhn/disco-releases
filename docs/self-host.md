@@ -1,3 +1,5 @@
+> **Distribution note:** this public copy adapts installation links to the reviewed source archive. Prebuilt v0.2.0 images are pending. To build locally, use `podman compose -f compose.yaml -f compose.build.yaml up -d --build` (or Docker with the documented rootless settings). The development repository remains private.
+
 # Self-hosting Disco
 
 This is the supported one-command path for a local Linux or WSL2 host. Sandboxes
@@ -48,8 +50,11 @@ Install `docker-compose` and run `podman compose up -d` again.
 **Rootless Podman** (the path this project's install testing actually covers):
 
 ```bash
-git clone https://github.com/Dyluhn/disco.git
-cd disco
+curl -fLO https://github.com/Dyluhn/disco-releases/releases/download/v0.2.0/disco-source-v0.2.0.tar.gz
+curl -fLO https://github.com/Dyluhn/disco-releases/releases/download/v0.2.0/SHA256SUMS
+sha256sum --ignore-missing -c SHA256SUMS
+tar -xzf disco-source-v0.2.0.tar.gz
+cd disco-v0.2.0
 systemctl --user daemon-reload
 systemctl --user start dbus.socket
 loginctl enable-linger "$USER"
@@ -122,8 +127,11 @@ Then point this shell at the rootless daemon and bring the stack up:
 ```bash
 export PATH="$HOME/bin:$PATH"
 export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/docker.sock"
-git clone https://github.com/Dyluhn/disco.git
-cd disco
+curl -fLO https://github.com/Dyluhn/disco-releases/releases/download/v0.2.0/disco-source-v0.2.0.tar.gz
+curl -fLO https://github.com/Dyluhn/disco-releases/releases/download/v0.2.0/SHA256SUMS
+sha256sum --ignore-missing -c SHA256SUMS
+tar -xzf disco-source-v0.2.0.tar.gz
+cd disco-v0.2.0
 DISCO_LOCAL_ENGINE=docker DISCO_SANDBOX_SOCKET=$XDG_RUNTIME_DIR/docker.sock \
   docker compose up -d
 docker compose logs app-server
@@ -379,7 +387,7 @@ podman compose exec agent-server disco-verify --quick
 Without the lifecycle script the update is:
 
 ```bash
-git pull                        # or: git checkout v0.2.0 — the tag pins DISCO_IMAGE_TAG
+# Download and review the next release source archive before upgrading.
 podman compose down             # or: docker compose down
 podman compose pull
 podman compose up -d
