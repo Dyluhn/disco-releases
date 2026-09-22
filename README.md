@@ -2,6 +2,16 @@
 
 Public distribution files for Disco: reviewed source snapshots, container-install files, benchmark sources and evidence, and launch materials. The development repository and its history remain private.
 
+## Built with Disco
+
+**A coffee-company site built with Disco: Northlake Roasters**, on the North Shore of Lake Superior.
+
+| Desktop | Phone |
+|---|---|
+| ![Northlake Roasters: small-batch coffee roasted by the lake](docs/assets/showcase/northlake/desktop.png) | ![Northlake Roasters on a phone](docs/assets/showcase/northlake/mobile.png) |
+
+[See the full coffee-company page](docs/assets/showcase/northlake/full.png).
+
 ## Benchmark sources and evidence
 
 [September 2026 benchmark release](https://github.com/Dyluhn/disco-releases/releases/tag/benchmarks-2026-09-21) includes the compact source/score-audit bundle, the full DeepResearch evidence publication copy, and all 24 App-Bench generated source archives with final grading evidence. These are local comparisons, not official leaderboard submissions. Read the included methodology, fairness disclosures, redaction ledgers, and checksum manifests.
