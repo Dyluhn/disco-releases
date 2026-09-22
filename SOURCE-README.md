@@ -1,4 +1,4 @@
-> **Distribution note:** this public copy adapts installation links to the reviewed source archive. Prebuilt v0.2.0 images are pending. To build locally, use `podman compose -f compose.yaml -f compose.build.yaml up -d --build` (or Docker with the documented rootless settings). The development repository remains private.
+> **Distribution note:** this public copy adapts installation links to the reviewed source archive. Prebuilt v0.2.0 images are public on GHCR for Linux amd64; anonymous pulls and an isolated rootless Docker installation passed on September 22, 2026. ARM64 images are not included. To build locally, use `podman compose -f compose.yaml -f compose.build.yaml up -d --build` (or Docker with the documented rootless settings). The development repository remains private.
 
 <p align="center">
   <picture>
@@ -19,7 +19,7 @@ Design authorities, when code and prose disagree:
 
 ## Quickstart
 
-Linux or WSL2 host (amd64 or arm64), rootless Podman, a compose provider. No
+Linux or WSL2 host (amd64 for the v0.2.0 prebuilt images), rootless Podman, a compose provider. No
 Python, Node or `uv` on the host; the stack pulls the published images (about
 5 GB the first time).
 

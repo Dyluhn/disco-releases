@@ -1,4 +1,4 @@
-> **Distribution note:** this public copy adapts installation links to the reviewed source archive. Prebuilt v0.2.0 images are pending. To build locally, use `podman compose -f compose.yaml -f compose.build.yaml up -d --build` (or Docker with the documented rootless settings). The development repository remains private.
+> **Distribution note:** this public copy adapts installation links to the reviewed source archive. Prebuilt v0.2.0 images are public on GHCR for Linux amd64; anonymous pulls and an isolated rootless Docker installation passed on September 22, 2026. ARM64 images are not included. To build locally, use `podman compose -f compose.yaml -f compose.build.yaml up -d --build` (or Docker with the documented rootless settings). The development repository remains private.
 
 # Self-hosting Disco
 
@@ -16,7 +16,7 @@ edits or a required `.env` file:
 
 `git`, rootless **Podman**, and a compose provider. Nothing else — no Python, no
 Node, no `uv` on the host; nothing is built. The stack pulls the published
-images from GHCR (amd64 and arm64; about 5 GB the first time, most of it the
+images from GHCR (v0.2.0: amd64 only; about 5 GB the first time, most of it the
 server image's bundled encoder and TTS weights). `DISCO_IMAGE_TAG` selects a
 release; the default is the tag the checkout was cut from.
 

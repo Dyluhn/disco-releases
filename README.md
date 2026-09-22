@@ -59,7 +59,7 @@ disclosures, redaction ledgers, and checksum manifests alongside the results.
 
 ## Application release
 
-The [Disco v0.2.0 source and launch artifacts](https://github.com/Dyluhn/disco-releases/releases/tag/v0.2.0) are published from source commit `e06ad0eb3e65576d80b406c7ac191562051f0c93`. The prerelease includes a source archive, Compose files, frontend build, validation results, and launch video. Native amd64 images are built and locally tested; registry uploads and anonymous image-pull verification are still pending. Build locally from the source archive using its Compose build override.
+The [Disco v0.2.0 source and launch artifacts](https://github.com/Dyluhn/disco-releases/releases/tag/v0.2.0) are published from source commit `e06ad0eb3e65576d80b406c7ac191562051f0c93`. The prerelease includes a source archive, Compose files, frontend build, validation results, and launch video. The three Linux amd64 images are public on GHCR and passed anonymous pulls plus an isolated installation check on September 22, 2026: health, exact source identity, database and encrypted-secret persistence after restart, and diagnostics. Use `podman compose up -d` from the extracted source archive (or the documented rootless Docker path). ARM64 images are not included.
 
 The public repository commit identifies distribution documentation. The source archive and image metadata identify the actual Disco source commit.
 
